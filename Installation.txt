@@ -97,34 +97,14 @@ mkdir -p ./test/specs
 &&
 touch ./test/specs/basic.js
 &&
-echo "describe('webdriver.io page', () => {
-    it('should open API,Help,Contribute pages', () => {
-     browser.url('https://webdriver.io')
-     browser.setWindowSize(1920, 1080)
- 
-     const APIbut = $('li a[href="/docs/api.html"]')
-     const Help   = $('li a[href="/help.html"]')
-     const Contribute = $('li a[href="/docs/contribute.html"]')
-     
-
-     browser.pause(5000)
-     APIbut.isDisplayed()
-     APIbut.click()
-     browser.pause(3000)
-     Help.isDisplayed()
-     Help.click()
-     browser.pause(3000)
-     Contribute.isDisplayed()
-     Contribute.click()
-     browser.pause(3000)
- })
- })" >> ./test/specs/basic.js
-&&
 npm install wdio-chromedriver-service --save-dev
 &&
 npm install @wdio/selenium-standalone-service --save-dev
-&&
-npx wdio wdio.conf.js
+
+
+//Command to start
+
+npx wdio wdio.conf.js --spec Test
 
 //Change wdio config for selenoid
 //change wdio.conf.js add to capabilities
@@ -168,4 +148,4 @@ capabilities: [{
 
 //start test command 
 
-npx wdio wdio.conf.js
+npx wdio wdio.conf.js --spec Test
